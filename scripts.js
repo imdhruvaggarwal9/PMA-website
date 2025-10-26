@@ -39,14 +39,12 @@ async function fetchMarketData() {
         // Simulated market data
         // In production, replace with actual API calls
         const simulatedData = [
-            { name: 'BSE SENSEX', value: '79,486.32', change: '+0.82%', positive: true },
-            { name: 'NIFTY 50', value: '24,148.20', change: '+0.75%', positive: true },
-            { name: 'NIFTY Bank', value: '51,234.60', change: '-0.23%', positive: false },
-            { name: 'Gold (₹/10g)', value: '₹73,850', change: '+0.15%', positive: true },
-            { name: 'Silver (₹/kg)', value: '₹85,420', change: '-0.42%', positive: false },
-            { name: 'USD/INR', value: '₹83.24', change: '+0.08%', positive: true },
-            { name: 'Crude Oil', value: '$72.45', change: '+1.23%', positive: true }
+            { name: 'BSE SENSEX', value: '84,211.88', change: '−344.52 (0.41%)', positive: false },
+            { name: 'NIFTY 50', value: '25,795.15', change: '−96.25 (0.37%)', positive: false },
+            { name: 'Gold (₹/10g)', value: '1,25,280.00', change: '+0.15%', positive: true },
+            { name: 'USD/INR', value: '₹87.82', change: '+0.08%', positive: true }
         ];
+
         
         // Display market data
         let html = '';
@@ -74,22 +72,22 @@ async function fetchMarketData() {
         marketDataDiv.innerHTML = `
             <div class="market-item">
                 <div class="market-name">BSE SENSEX</div>
-                <div class="market-value positive">79,486.32</div>
-                <div class="market-change positive">+0.82%</div>
+                <div class="market-value positive">84,211.88</div>
+                <div class="market-change positive">−344.52 (0.41%)</div>
             </div>
             <div class="market-item">
                 <div class="market-name">NIFTY 50</div>
-                <div class="market-value positive">24,148.20</div>
-                <div class="market-change positive">+0.75%</div>
+                <div class="market-value positive">25,795.15</div>
+                <div class="market-change positive">−96.25 (0.37%)</div>
             </div>
             <div class="market-item">
                 <div class="market-name">Gold (₹/10g)</div>
-                <div class="market-value positive">₹73,850</div>
+                <div class="market-value positive">1,25,280.00 </div>
                 <div class="market-change positive">+0.15%</div>
             </div>
             <div class="market-item">
                 <div class="market-name">USD/INR</div>
-                <div class="market-value positive">₹83.24</div>
+                <div class="market-value positive">₹87.82</div>
                 <div class="market-change positive">+0.08%</div>
             </div>
             <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">Live market data</div>
