@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pankaj Manvi and Associates - Chartered Accountants</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: white;
+            color: #2c3e50;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #1e3c72;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #2a5298;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.85)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%231e3c72" width="1200" height="400"/></svg>');
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .content-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            color: #1e3c72;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #2a5298;
+            padding-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #2a5298;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .service-item h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .team-member-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .team-member h4 {
+            color: #1e3c72;
+            margin-bottom: 0.3rem;
+        }
+
+        .team-member p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e3c72;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin-top: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info strong {
+            color: #1e3c72;
+            min-width: 100px;
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        .infrastructure-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .infrastructure-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-top: 3px solid #2a5298;
+        }
+
+        .infrastructure-item h4 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="pma.jpg" alt="Pankaj Manvi and Associates Logo" style="height: 80px; width: auto;">
+            </div>
+            <nav>
+                <ul>
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('about')">About Us</a></li>
+                    <li><a onclick="showPage('services')">Services</a></li>
+                    <li><a onclick="showPage('team')">Our Team</a></li>
+                    <li><a onclick="showPage('infrastructure')">Infrastructure</a></li>
+                    <li><a onclick="showPage('gallery')">Gallery</a></li>
+                    <li><a onclick="showPage('contact')">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h2>Professional Excellence in Financial Services</h2>
+        <p>Your trusted partner for comprehensive accounting, taxation, and financial advisory services</p>
+    </div>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home" class="page-section active">
+            <div class="content-card">
+                <h3>Welcome to Pankaj Manvi and Associates</h3>
+                <p>With years of professional expertise and unwavering commitment to excellence, Pankaj Manvi and Associates stands as a distinguished chartered accountancy firm dedicated to providing comprehensive financial solutions. We pride ourselves on delivering personalized services that cater to the unique needs of our diverse clientele.</p>
+                <p style="margin-top: 1rem;">Our firm combines traditional values of integrity and professionalism with modern approaches to financial management, ensuring that our clients receive the highest quality of service in an ever-evolving business landscape.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Our Core Values</h3>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h4>Integrity</h4>
+                        <p>We maintain the highest ethical standards in all our professional dealings.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Excellence</h4>
+                        <p>We strive for excellence in every service we provide to our clients.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Confidentiality</h4>
+                        <p>We ensure complete confidentiality of our clients' financial information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Us Page -->
+        <div id="about" class="page-section">
+            <div class="content-card">
+                <h3>About Our Firm</h3>
+                <p>Pankaj Manvi and Associates is a premier chartered accountancy firm established with the vision of providing exceptional financial services to businesses and individuals. Our firm has grown steadily over the years, building a reputation for reliability, expertise, and client-focused solutions.</p>
+                <p style="margin-top: 1rem;">We understand that every client has unique requirements, and we take pride in offering customized solutions that align with their specific goals and objectives. Our team of qualified professionals brings together extensive knowledge, practical experience, and a commitment to staying updated with the latest regulatory changes and industry practices.</p>
+                <p style="margin-top: 1rem;">Our approach is rooted in building long-term relationships with our clients, serving as trusted advisors who contribute to their financial success and business growth. We believe in transparent communication, timely delivery, and providing insights that add genuine value to our clients' operations.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Our Mission</h3>
+                <p>To provide exceptional professional services with integrity, precision, and dedication, helping our clients achieve their financial objectives and maintain compliance with regulatory requirements.</p>
+            </div>
+
+            <div class="content-card">
+                <h3>Our Vision</h3>
+                <p>To be recognized as a leading chartered accountancy firm known for excellence, innovation, and unwavering commitment to client success.</p>
+            </div>
+        </div>
+
+        <!-- Services Page -->
+        <div id="services" class="page-section">
+            <div class="content-card">
+                <h3>Our Services</h3>
+                <p>We offer a comprehensive range of professional services designed to meet the diverse needs of our clients:</p>
+                
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h4>Audit & Assurance</h4>
+                        <p>Statutory audits, internal audits, tax audits, and comprehensive assurance services.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Taxation Services</h4>
+                        <p>Income tax, GST, TDS compliance, tax planning, and representation before tax authorities.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Accounting Services</h4>
+                        <p>Bookkeeping, financial statements preparation, and accounting system implementation.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Business Advisory</h4>
+                        <p>Financial planning, business valuation, feasibility studies, and strategic consulting.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Company Incorporation</h4>
+                        <p>Company registration, LLP formation, trademark registration, and compliance management.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>ROC Compliance</h4>
+                        <p>Annual filing, board meetings, AGM compliance, and regulatory submissions.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>GST Services</h4>
+                        <p>GST registration, return filing, reconciliation, and advisory services.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Payroll Management</h4>
+                        <p>Salary processing, PF/ESI compliance, and payroll administration.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Financial Consulting</h4>
+                        <p>Cash flow management, working capital optimization, and financial restructuring.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Page -->
+        <div id="team" class="page-section">
+            <div class="content-card">
+                <h3>Our Team</h3>
+                <p>Our team comprises qualified chartered accountants and finance professionals who bring expertise, dedication, and professionalism to every engagement.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-member-icon">PM</div>
+                        <h4>CA Pankaj Manvi</h4>
+                        <p>Founder & Managing Partner</p>
+                        <p style="margin-top: 0.5rem;">Specializes in taxation, audit, and financial advisory services.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-icon">CA</div>
+                        <h4>Senior Associates</h4>
+                        <p>Chartered Accountants</p>
+                        <p style="margin-top: 0.5rem;">Experienced professionals handling diverse client portfolios.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-icon">TA</div>
+                        <h4>Tax Advisors</h4>
+                        <p>Tax Consultants</p>
+                        <p style="margin-top: 0.5rem;">Experts in direct and indirect taxation matters.</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-member-icon">AS</div>
+                        <h4>Audit Staff</h4>
+                        <p>Audit Professionals</p>
+                        <p style="margin-top: 0.5rem;">Dedicated team ensuring quality audit services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Infrastructure Page -->
+        <div id="infrastructure" class="page-section">
+            <div class="content-card">
+                <h3>Our Infrastructure</h3>
+                <p>We maintain state-of-the-art infrastructure to ensure efficient service delivery and client satisfaction.</p>
+                
+                <div class="infrastructure-list">
+                    <div class="infrastructure-item">
+                        <h4>Modern Office Space</h4>
+                        <p>Well-equipped office with professional ambiance for client meetings and consultations.</p>
+                    </div>
+                    <div class="infrastructure-item">
+                        <h4>Advanced Technology</h4>
+                        <p>Latest accounting software, cloud-based solutions, and secure data management systems.</p>
+                    </div>
+                    <div class="infrastructure-item">
+                        <h4>Digital Infrastructure</h4>
+                        <p>High-speed internet connectivity, digital documentation, and paperless operations.</p>
+                    </div>
+                    <div class="infrastructure-item">
+                        <h4>Conference Facilities</h4>
+                        <p>Dedicated meeting rooms equipped with audio-visual facilities for client presentations.</p>
+                    </div>
+                    <div class="infrastructure-item">
+                        <h4>Research Library</h4>
+                        <p>Comprehensive collection of professional resources, journals, and regulatory updates.</p>
+                    </div>
+                    <div class="infrastructure-item">
+                        <h4>Security Systems</h4>
+                        <p>Robust data security measures including encryption, backups, and access controls.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Page -->
+        <div id="gallery" class="page-section">
+            <div class="content-card">
+                <h3>Gallery</h3>
+                <p>A glimpse into our professional environment and activities.</p>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">Office Reception</div>
+                    <div class="gallery-item">Conference Room</div>
+                    <div class="gallery-item">Work Stations</div>
+                    <div class="gallery-item">Client Meeting Area</div>
+                    <div class="gallery-item">Library Section</div>
+                    <div class="gallery-item">Technology Infrastructure</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact" class="page-section">
+            <div class="content-card">
+                <h3>Contact Us</h3>
+                <p>We welcome the opportunity to discuss how we can assist you with your financial and accounting needs.</p>
+                
+                <div class="contact-info">
+                    <p><strong>Address:</strong> [Office Address], [City], [State] - [PIN Code]</p>
+                    <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+                    <p><strong>Email:</strong> info@pankajmanvi.com</p>
+                    <p><strong>Office Hours:</strong> Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h4 style="color: #1e3c72; margin-bottom: 1rem;">Get in Touch</h4>
+                    <p>For inquiries, appointments, or consultations, please feel free to contact us through phone or email. Our team is committed to responding promptly to all client communications.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a onclick="showPage('home')">Home</a></li>
+                    <li><a onclick="showPage('about')">About Us</a></li>
+                    <li><a onclick="showPage('services')">Services</a></li>
+                    <li><a onclick="showPage('team')">Our Team</a></li>
+                    <li><a onclick="showPage('infrastructure')">Infrastructure</a></li>
+                    <li><a onclick="showPage('gallery')">Gallery</a></li>
+                    <li><a onclick="showPage('contact')">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <p>Phone: +91-XXXXXXXXXX</p>
+                <p>Email: info@pankajmanvi.com</p>
+                <p>Office Hours: Mon - Sat<br>9:00 AM - 6:00 PM</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Our Services</h4>
+                <ul>
+                    <li>Audit & Assurance</li>
+                    <li>Taxation Services</li>
+                    <li>Business Advisory</li>
+                    <li>GST Services</li>
+                    <li>Company Incorporation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pankaj Manvi and Associates. All rights reserved. | Chartered Accountants</p>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
