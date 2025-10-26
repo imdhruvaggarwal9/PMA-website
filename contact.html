@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pankaj Manvi and Associates</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="pma.jpg" alt="Pankaj Manvi and Associates Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="page-header-overlay">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-card">
+            <h3>Contact Us</h3>
+            <p>We welcome the opportunity to discuss how we can assist you with your financial and accounting needs.</p>
+            
+            <div class="contact-info">
+                <p><strong>Address:</strong> [Office Address], [City], [State] - [PIN Code]</p>
+                <p><strong>Phone:</strong> +91-XXXXXXXXXX</p>
+                <p><strong>Email:</strong> info@pankajmanvi.com</p>
+                <p><strong>Office Hours:</strong> Monday - Saturday: 9:00 AM - 6:00 PM</p>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <h4 style="color: #1e3c72; margin-bottom: 1rem;">Get in Touch</h4>
+                <p>For inquiries, appointments, or consultations, please feel free to contact us through phone or email. Our team is committed to responding promptly to all client communications.</p>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h3>Send Us a Message</h3>
+            <form class="contact-form" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="infrastructure.html">Infrastructure</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <p>Phone: +91-XXXXXXXXXX</p>
+                <p>Email: info@pankajmanvi.com</p>
+                <p>Office Hours: Mon - Sat<br>9:00 AM - 6:00 PM</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Our Services</h4>
+                <ul>
+                    <li>Audit & Assurance</li>
+                    <li>Taxation Services</li>
+                    <li>Business Advisory</li>
+                    <li>GST Services</li>
+                    <li>Company Incorporation</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Pankaj Manvi and Associates. All rights reserved. | Chartered Accountants</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
